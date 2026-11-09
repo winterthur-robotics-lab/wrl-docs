@@ -1,0 +1,105 @@
+site_name: Winterthur Robotics Lab
+site_url: https://docs.winterthur-robotics-lab.ch/
+site_description: >-
+  Documentation for members, visitors and board of the Winterthur Robotics Lab.
+site_author: Winterthur Robotics Lab
+
+repo_url: https://github.com/winterthur-robotics-lab/wrl-docs
+repo_name: winterthur-robotics-lab/wrl-docs
+edit_uri: edit/main/docs/
+
+# --- Theme ---------------------------------------------------------------
+theme:
+  name: material
+  language: en
+  logo: assets/logo.svg
+  favicon: assets/logo.svg
+  icon:
+    repo: fontawesome/brands/github
+  font:
+    text: IBM Plex Sans
+    code: IBM Plex Mono
+  palette:
+    - scheme: default
+      primary: white
+      accent: yellow
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: black
+      accent: yellow
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - navigation.tracking
+    - navigation.instant
+    - navigation.instant.progress
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tooltips
+
+# --- Plugins -------------------------------------------------------------
+plugins:
+  - search
+
+# --- Extra assets --------------------------------------------------------
+extra_css:
+  - stylesheets/extra.css
+  - office/email-signature.css
+
+extra_javascript:
+  - office/email-signature.js
+
+extra:
+  social:
+    - icon: fontawesome/solid/globe
+      link: https://winterthur-robotics-lab.ch
+      name: winterthur-robotics-lab.ch
+
+# --- Markdown features ---------------------------------------------------
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+# --- Navigation ----------------------------------------------------------
+nav:
+  - Home: index.md
+  - Lab:
+      - lab/index.md
+      - Rules: lab/rules.md
+  - Office:
+      - office/index.md
+      - Email signature: office/email-signature.md

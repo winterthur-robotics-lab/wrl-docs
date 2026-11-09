@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <style>
+    .body { fill: #0A0B0B; }
+    @media (prefers-color-scheme: dark) { .body { fill: #FBFBF9; } }
+  </style>
+  <path class="body"  d="M 103.27 7.89 L 179.20 51.72 L 144.83 90.68 L 121.35 61.69 Z"/>
+  <path class="body"  d="M 181.41 56.78 L 181.41 144.45 L 130.49 134.16 L 143.85 99.34 Z"/>
+  <path class="body"  d="M 178.13 148.89 L 102.21 192.72 L 85.66 143.48 L 122.50 137.65 Z"/>
+  <path class="" fill="#FFD100" d="M 96.73 192.11 L 20.80 148.28 L 55.17 109.32 L 78.65 138.31 Z"/>
+  <path class="body"  d="M 18.59 143.22 L 18.59 55.55 L 69.51 65.84 L 56.15 100.66 Z"/>
+  <path class="body"  d="M 21.87 51.11 L 97.79 7.28 L 114.34 56.52 L 77.50 62.35 Z"/>
+</svg>

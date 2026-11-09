@@ -1,0 +1,180 @@
+/* Chrome for the email-signature generator on office/email-signature.md.
+   Its own file so one page's chrome does not pollute the site-wide tokens. */
+
+/* ------------------------------------------------------------------ the form */
+
+.md-typeset .sig-builder {
+  margin: 1.2rem 0 1.6rem;
+}
+.md-typeset .sig-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 0.8rem 1rem;
+  margin-bottom: 1.2rem;
+}
+.md-typeset .sig-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.md-typeset .sig-field__label {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--md-default-fg-color--light);
+}
+.md-typeset .sig-field__label span {
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--md-default-fg-color--lighter);
+}
+.md-typeset .sig-field input {
+  width: 100%;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0;  /* chamfer not supported at this scale in CSS without clip-path */
+  background-color: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  font-family: inherit;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+.md-typeset .sig-field input::placeholder {
+  color: var(--md-default-fg-color--lightest);
+}
+.md-typeset .sig-field input:focus {
+  outline: 2px solid #FFD100;
+  outline-offset: 2px;
+  border-color: #FFD100;
+  box-shadow: none;
+}
+
+/* --------------------------------------------------------- the preview cards */
+
+.md-typeset .sig-previews {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 0.8rem;
+  margin: 0 0 1.1rem;
+}
+
+/* Cards simulate a mail client — colours are FIXED, not following the theme. */
+.md-typeset .sig-card {
+  margin: 0;
+  padding: 1.1rem 1.2rem 1.2rem;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+}
+.md-typeset .sig-card--dark {
+  border-color: #24313f;
+  background-color: #101820;
+}
+[data-md-color-scheme="slate"] .md-typeset .sig-card--dark {
+  border-color: #3d4f61;
+}
+.md-typeset .sig-cap {
+  margin: 0 0 0.85rem;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+.md-typeset .sig-card--dark .sig-cap {
+  color: #94a3b8;
+}
+
+/* Dark-client colour hooks — same logic as the binabik sig. */
+.md-typeset .sig-card--dark .sig-name,
+.md-typeset .sig-card--dark .sig-text,
+.md-typeset .sig-card--dark .sig-text a {
+  color: #f8fafc !important;
+}
+.md-typeset .sig-card--dark .sig-muted {
+  color: #94a3b8 !important;
+}
+
+/* Keep theme table styles off the signature preview. */
+.md-typeset .sig-stage {
+  line-height: normal;
+  overflow-x: auto;
+}
+.md-typeset .sig-stage table,
+.md-typeset .sig-stage table:not([class]) {
+  display: table;
+  width: auto;
+  max-width: none;
+  margin: 0;
+  border: 0;
+  background-color: transparent;
+  box-shadow: none;
+  overflow: visible;
+  font-size: 16px;
+}
+.md-typeset .sig-stage table tr,
+.md-typeset .sig-stage table tr:hover,
+.md-typeset .sig-stage table:not([class]) tbody tr:hover {
+  background-color: transparent;
+  box-shadow: none;
+}
+.md-typeset .sig-stage table td,
+.md-typeset .sig-stage table:not([class]) td {
+  border: 0;
+  padding: 0;
+  background: none;
+  font-size: inherit;
+  vertical-align: top;
+}
+.md-typeset .sig-stage a,
+.md-typeset .sig-stage a:hover {
+  text-decoration: none;
+}
+
+/* ----------------------------------------------------------------- the actions */
+
+.md-typeset .sig-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.7rem;
+}
+
+/* Primary button: signal yellow with ink text — 12.3:1 contrast, any size. */
+.md-typeset .sig-btn {
+  padding: 0.5rem 1rem;
+  border: 2px solid #FFD100;
+  background-color: #FFD100;
+  color: #0D1011;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 80ms, border-color 80ms;
+}
+.md-typeset .sig-btn:hover:not([disabled]) {
+  background-color: #e6bc00;
+  border-color: #e6bc00;
+}
+.md-typeset .sig-btn--ghost {
+  border-color: var(--md-default-fg-color--lightest);
+  background-color: transparent;
+  color: var(--md-default-fg-color--light);
+  font-weight: 500;
+}
+.md-typeset .sig-btn--ghost:hover:not([disabled]) {
+  border-color: var(--md-default-fg-color--lighter);
+  background-color: var(--md-code-bg-color);
+  color: var(--md-default-fg-color);
+}
+.md-typeset .sig-btn[disabled] {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+.md-typeset .sig-status {
+  font-size: 0.68rem;
+  color: var(--md-default-fg-color--light);
+}
