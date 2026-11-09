@@ -12,8 +12,9 @@
 
   /* Fixed for everyone — the parts that make it a lab signature. */
   var ADDRESS = ["Technoparkstrasse 2", "8406 Winterthur, Switzerland"];
-  var SITE    = "winterthur-robotics-lab.ch";
-  var DOMAIN  = "winterthur-robotics-lab.ch";
+  var SITE     = "winterthur-robotics-lab.ch";
+  var DOMAIN   = "winterthur-robotics-lab.ch";
+  var LINKEDIN = "https://www.linkedin.com/company/winterthur-robotics-lab";
   var FONT    = "'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',Arial,sans-serif";
   var STORE   = "wrl.signature.v1";
   var FIELDS  = ["name", "role", "email", "phone"];
@@ -80,7 +81,7 @@
     if (f.email) reach.push(link("mailto:" + esc(f.email), esc(f.email)));
     if (f.phone) reach.push(link("tel:" + telHref(f.phone), nbsp(f.phone)));
 
-    var web = [link("https://" + SITE, SITE, true)];
+    var web = [link("https://" + SITE, SITE, true), link(LINKEDIN, "LinkedIn")];
 
     var block = [
       '      <div style="font-family:' + FONT +
